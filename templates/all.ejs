@@ -9,15 +9,21 @@
 </head>
 
 <body>
-
+     <h1>Links</h1>
+     <a href="/addlink">Adicionar Link</a>
     <% for( let i = 0; i < links.length; i++ ) { %>
     <div id="<%= links[i]._id %> ">
-        <h2><%= links[i].title %> </h2>
-        <div><%= links[i].description %> </div>
-        <div><%= links[i].url %> </div>
+        <form method="POST" action="/?_method=DELETE">
+            <h1>ID: <%= links[i]._id %> </h1>
+            <h2><%= links[i].title %> </h2>
+            <div><%= links[i].description %> </div>
+            <div><%= links[i].url %> </div>
+            <input type="hidden" name="id" value="<%=links[i]._id%>">
+            <button type="submit">Delete</button>
+            <a href="/editlink/<%=links[i]._id%>">EDIT</a>
+        </form>
     </div>
     <% } %>
-
 </body>
 
 </html>
