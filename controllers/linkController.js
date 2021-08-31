@@ -24,7 +24,7 @@ const addLink = async (req, res) => {
 
     try {
         let doc = await link.save();
-        res.redirect('/')
+        res.redirect('/alllinks')
     } catch (error) {
         res.render('index', {
             error,
@@ -57,7 +57,7 @@ const deleteLink = async (req, res) => {
             status: true,
             link: response
         }) */
-        res.redirect('/')
+        res.redirect('/alllinks')
     } catch (error) {
         res.status(404).send(error)
     }
@@ -91,7 +91,7 @@ const editLink = async (req, res) => {
     }
     try {
         let doc = await Link.findByIdAndUpdate(id, link)
-        res.redirect('/')
+        res.redirect('/alllinks')
     } catch (error) {
         res.render('edit', {
             error,
