@@ -9,9 +9,9 @@
 </head>
 
 <body>
-
+    <%-include("partials/style.ejs")%> 
     <div>
-        <h1>EDIT LINK</h1>
+        <h1 class="title-body">EDIT LINK</h1>
         <form action="/edit/<%=body.id%>" method="POST">
             <input class="field" name="title" placeholder="title" value="<%=body.title%>" required>
             <input class="field" name="description" placeholder="Description" value="<%=body.description%>">

@@ -9,18 +9,21 @@
 </head>
 
 <body>
-     <h1>Links</h1>
-     <a href="/addlink">Adicionar Link</a>
+    <%- include('partials/style.ejs') %>
+
+    <div>
+        <h1 class="title-body">Links</h1>
+        <a class="add-links" href="/addlink">Adicionar Link</a>
+    </div>
     <% for( let i = 0; i < links.length; i++ ) { %>
-    <div id="<%= links[i]._id %> ">
+    <div class="card-box" id="<%= links[i]._id %> ">
         <form method="POST" action="/?_method=DELETE">
-            <h1>ID: <%= links[i]._id %> </h1>
-            <h2><%= links[i].title %> </h2>
-            <div><%= links[i].description %> </div>
-            <div><%= links[i].url %> </div>
+            <h2 class="title-card"><%= links[i].title %> </h2>
+            <h3 class="title-body-card"><%= links[i].description %> </h3>
+            <a class="my-link" href="<%= links[i].url %> ">My Link</a>
             <input type="hidden" name="id" value="<%=links[i]._id%>">
-            <button type="submit">Delete</button>
-            <a href="/editlink/<%=links[i]._id%>">EDIT</a>
+            <a class="btn-edit" href="/editlink/<%=links[i]._id%>">EDIT</a>
+            <button class="btn-card" type="submit">Delete</button>
         </form>
     </div>
     <% } %>
