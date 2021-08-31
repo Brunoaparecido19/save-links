@@ -6,7 +6,7 @@ const PORT = process.env.PORT || 3000
 const linkRouter = require('./routes/linkRoute');
 
 
-mongoose.connect("mongodb://localhost/newlinks")
+mongoose.connect(process.env.MONGO_URL)
 
 let db = mongoose.connection;
 
