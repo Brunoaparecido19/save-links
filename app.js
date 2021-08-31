@@ -2,7 +2,7 @@ const express = require('express')
 const app = express()
 const mongoose = require('mongoose');
 const path = require('path');
-const port = 3000
+const PORT = process.env.PORT || 3000
 const linkRouter = require('./routes/linkRoute');
 
 
@@ -24,5 +24,5 @@ app.set('views', path.join(__dirname, 'templates'));
 app.use('/', linkRouter)
 
 
-app.listen(port, () => console.log(`Example app listening on port port!`))
+app.listen(PORT, () => console.log(`Example app listening on port port!`))
 
