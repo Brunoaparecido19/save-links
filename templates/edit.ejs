@@ -12,12 +12,14 @@
     <%-include("partials/style.ejs")%> 
     <div>
         <h1 class="title-body">EDIT LINK</h1>
-        <form action="/edit/<%=body.id%>" method="POST">
+        <div class="container-form">
+        <form  action="/edit/<%=body.id%>" method="POST">
             <input class="field" name="title" placeholder="title" value="<%=body.title%>" required>
             <input class="field" name="description" placeholder="Description" value="<%=body.description%>">
             <input class="field" name="url" placeholder="URL" value="<%=body.url%>" required>
-            <button>EDIT</button>
+            <button class="edit">EDIT</button>
         </form>
+        </div>
     </div>
 
     <%if (error) { %>
